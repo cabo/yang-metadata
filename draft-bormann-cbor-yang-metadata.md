@@ -7,7 +7,7 @@ category: std
 consensus: true
 stream: IETF
 
-docname: draft-bormann-cbor-yang-metadata
+docname: draft-bormann-cbor-yang-metadata-latest
 number:
 date:
 area: ART
