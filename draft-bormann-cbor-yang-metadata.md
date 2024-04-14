@@ -10,12 +10,12 @@ stream: IETF
 docname: draft-bormann-cbor-yang-metadata-latest
 number:
 date:
-area: ART
-workgroup: CBOR Working Group
+area: "Applications and Real-Time"
+workgroup: "Concise Binary Object Representation Maintenance and Extensions"
 keyword:
 venue:
-  mail: cbor@ietf.org
-  github: cabo/yang-metadata
+  mail: "cbor@ietf.org"
+  github: "cabo/yang-metadata"
 
 author:
   -
