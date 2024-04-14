@@ -8,6 +8,8 @@ This is the working area for the individual Internet-Draft, "Representing metada
 * [Compare Editor's Copy to Individual Draft](https://cabo.github.io/yang-metadata/#go.draft-bormann-cbor-yang-metadata.diff)
 
 
+[Access to all branches](https://cabo.github.io/yang-metadata/)
+
 ## Contributing
 
 See the
