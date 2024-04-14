@@ -106,7 +106,7 @@ the representation of the instance ("`Instance-Representation`") with
 the structure specified in CDDL in {{fig-metadata-tag}}:
 
 ~~~ cddl
-annotated-data-node<Instance-Representation> = 109([ ; CPA109
+annotated-data-node<Instance-Representation> = #6.109([ ; CPA109
   metadata-map,
   Instance-Representation
 ])
