@@ -141,7 +141,8 @@ Note that the examples here always show an enclosing map if needed; this
 is generally elided in {{Section 5.2 of -md}} (showing only map key and
 map value separated by colon).
 
-In order to use SIDs, we assume the example SID assignments in
+All but one example below use YANG SIDs ({{Section 3.2 of RFC9254}}).
+For this, the examples assume the example SID assignments in
 {{example-sids}}, the relevant ones of which are also repeated at the
 start of each subsection:
 
@@ -187,6 +188,20 @@ the other examples.
 ~~~
 {: #fig-cask title="Cask example"}
 
+The same "cask" example with name-based CBOR maps ({{Section 3.3 of RFC9254}}):
+
+~~~ cbor-diag
+{
+   "cask": /CPA/ 109([
+     {
+       "example-last-modified:last-modified":
+         "2015-09-16T10:27:35+02:00"
+     },
+     ... # instance representation in its own map
+   ])
+}
+~~~
+{: #fig-cask-name title="Cask example with names"}
 
 "seq" is a list whose key is "name"; annotation "last-modified" is
 added only to the first entry:
