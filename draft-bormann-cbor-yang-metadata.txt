@@ -4,8 +4,8 @@
 
 CBOR                                                          C. Bormann
 Internet-Draft                                    Universität Bremen TZI
-Intended status: Standards Track                           14 April 2024
-Expires: 16 October 2024
+Intended status: Standards Track                           18 April 2024
+Expires: 20 October 2024
 
 
              Representing metadata annotations in YANG-CBOR
@@ -46,7 +46,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 October 2024.
+   This Internet-Draft will expire on 20 October 2024.
 
 Copyright Notice
 
@@ -124,12 +124,12 @@ Table of Contents
    _Metadata Map_, which is identical in structure to the other CBOR
    maps used in [RFC9254].
 
-   Where SIDs are used as the basis for the map keys for the metadata
-   map, its reference SID is the reference SID of the enclosing data
-   structure, as defined in Section 3.2 of [RFC9254].  Where names
-   (Section 3.3 of [RFC9254]) are used as the map keys for the metadata
-   map, they MUST be fully qualified, analogous to Section 5.2.1 of
-   [RFC7952].
+   Where YANG SIDs are used as the basis for the map keys for the
+   metadata map, the map's reference SID is the reference SID of the
+   enclosing data structure, as defined in Section 3.2 of [RFC9254].
+   Where names (Section 3.3 of [RFC9254]) are used as the map keys for
+   the metadata map, they MUST be fully qualified, analogous to
+   Section 5.2.1 of [RFC7952].
 
    Metadata annotations are added to a data node instance by replacing
    the representation of the instance ("Instance-Representation") with
@@ -166,11 +166,12 @@ Table of Contents
    Section 5.2 of [RFC7952]; please see the descriptions of these
    examples there.  Note that the examples here always show an enclosing
    map if needed; this is generally elided in Section 5.2 of [RFC7952]
-   (showing only map key and map value separated by colon).
+   (which shows only map key and map value separated by colon).
 
-   In order to use SIDs, we assume the example SID assignments in
-   Table 1, the relevant ones of which are also repeated at the start of
-   each subsection:
+   All but one example below use YANG SIDs (Section 3.2 of [RFC9254]).
+   For this, the examples assume the example SID assignments in Table 1,
+   the relevant ones of which are also repeated at the start of each
+   subsection:
 
               +=====================================+=======+
               | name                                | SID   |
@@ -192,8 +193,8 @@ Table of Contents
 
                         Table 1: Example SID values
 
-   For computing the SID deltas, the examples assume the reference SID
-   is 61000.
+   For computing the outermost SID deltas, the examples assume the
+   reference SID is 61000.
 
 3.1.  Examples from Section 5.2.2 of [RFC7952]
 
@@ -229,6 +230,21 @@ Table of Contents
 
                            Figure 2: Cask example
 
+   The same "cask" example with name-based CBOR maps (Section 3.3 of
+   [RFC9254]):
+
+   {
+      "cask": /CPA/ 109([
+        {
+          "example-last-modified:last-modified":
+            "2015-09-16T10:27:35+02:00"
+        },
+        ... # instance representation in its own map
+      ])
+   }
+
+                     Figure 3: Cask example with names
+
    "seq" is a list whose key is "name"; annotation "last-modified" is
    added only to the first entry:
 
@@ -250,7 +266,7 @@ Table of Contents
       ]
    }
 
-                           Figure 3: Seq example
+                           Figure 4: Seq example
 
 3.2.  Examples from Section 5.2.3 of [RFC7952]
 
@@ -279,7 +295,7 @@ Table of Contents
      ])
    }
 
-                         Figure 4: Foo:flag example
+                         Figure 5: Foo:flag example
 
    "stuff" is an anyxml node:
 
@@ -292,7 +308,7 @@ Table of Contents
      ])
    }
 
-                          Figure 5: Stuff example
+                          Figure 6: Stuff example
 
 3.3.  Examples from Section 5.2.4 of [RFC7952]
 
@@ -315,7 +331,7 @@ Table of Contents
      ]
    }
 
-                     Figure 6: Bibliomod:folio example
+                     Figure 7: Bibliomod:folio example
 
 4.  Security Considerations
 
