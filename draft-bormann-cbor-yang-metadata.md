@@ -94,8 +94,8 @@ Analogously, the YANG-CBOR encoding of metadata annotations uses a
 *Metadata Map*, which is identical in structure to the other CBOR maps
 used in {{-yang-cbor}}.
 
-Where SIDs are used as the basis for the map keys for the metadata
-map, its reference SID is the reference SID of the enclosing data
+Where YANG SIDs are used as the basis for the map keys for the metadata
+map, the map's reference SID is the reference SID of the enclosing data
 structure, as defined in {{Section 3.2 of -yang-cbor}}.
 Where names ({{Section 3.3 of -yang-cbor}}) are used as the map keys for
 the metadata map, they MUST be fully qualified, analogous to {{Section
@@ -138,7 +138,7 @@ This section provides a number of examples, based on the examples in
 {{Section 5.2 of -md}}; please see the descriptions of these examples
 there.
 Note that the examples here always show an enclosing map if needed; this
-is generally elided in {{Section 5.2 of -md}} (showing only map key and
+is generally elided in {{Section 5.2 of -md}} (which shows only map key and
 map value separated by colon).
 
 All but one example below use YANG SIDs ({{Section 3.2 of RFC9254}}).
@@ -156,8 +156,8 @@ start of each subsection:
 | bibliomod:folio                     | 61630 |
 {: #example-sids title="Example SID values"}
 
-For computing the SID deltas, the examples assume the reference SID is
-61000.
+For computing the outermost SID deltas, the examples assume the
+reference SID is 61000.
 
 ## Examples from {{Section 5.2.2 of -md}} {#s522}
 
