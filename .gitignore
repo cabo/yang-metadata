@@ -1,6 +1,5 @@
 *.html
 *.pdf
-*.xml
 *.redxml
 *.swp
 *.txt
@@ -8,9 +7,9 @@
 *~
 .tags
 /*-[0-9][0-9].xml
+/.*.mk
 /.gems/
 /.refcache
-/.targets.mk
 /.venv/
 /.vscode/
 /lib
