@@ -37,7 +37,7 @@ normative:
   IANA.cbor-tags: tags
   RFC8610: cddl
   RFC9165: controls
-  I-D.ietf-cbor-update-8610-grammar: cddlupd
+  RFC9682: cddlupd
 
 informative:
   I-D.ietf-cbor-edn-literals: edn
