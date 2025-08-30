@@ -36,7 +36,8 @@ normative:
   STD94: cbor
   IANA.cbor-tags: tags
   RFC8610: cddl
-  RFC9165: controls
+  RFC9165: control1
+  RFC9741: control2
   RFC9682: cddlupd
 
 informative:
@@ -60,7 +61,8 @@ This specification defines the representation of metadata annotations
 {::boilerplate bcp14-tagged-bcp}
 
 The term "CDDL" refers to the data definition language defined in
-{{-cddl}} and its registered extensions (such as those in {{-controls}}), as
+{{-cddl}} and its registered extensions (such as those in {{-control1}}
+and {{-control2}}), as
 well as {{-cddlupd}}.
 
 Specific examples are notated in CBOR Extended
