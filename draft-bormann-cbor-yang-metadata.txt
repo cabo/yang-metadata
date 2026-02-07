@@ -4,8 +4,8 @@
 
 CBOR                                                          C. Bormann
 Internet-Draft                                    Universität Bremen TZI
-Intended status: Standards Track                            3 March 2025
-Expires: 4 September 2025
+Intended status: Standards Track                         7 February 2026
+Expires: 11 August 2026
 
 
              Representing metadata annotations in YANG-CBOR
@@ -46,21 +46,21 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 September 2025.
+   This Internet-Draft will expire on 11 August 2026.
 
 
 
 
 
 
-Bormann                 Expires 4 September 2025                [Page 1]
+Bormann                  Expires 11 August 2026                 [Page 1]
 
-Internet-Draft      Metadata Annotations in YANG-CBOR         March 2025
+Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
 
 Copyright Notice
 
-   Copyright (c) 2025 IETF Trust and the persons identified as the
+   Copyright (c) 2026 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -104,14 +104,14 @@ Table of Contents
    shown here.
 
    The term "CDDL" refers to the data definition language defined in
-   [RFC8610] and its registered extensions (such as those in [RFC9165]),
-   as well as [RFC9682].
+   [RFC8610] and its registered extensions (such as those in [RFC9165]
+   and [RFC9741]), as well as [RFC9682].
 
 
 
-Bormann                 Expires 4 September 2025                [Page 2]
+Bormann                  Expires 11 August 2026                 [Page 2]
 
-Internet-Draft      Metadata Annotations in YANG-CBOR         March 2025
+Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
 
    Specific examples are notated in CBOR Extended Diagnostic Notation
@@ -165,9 +165,9 @@ Internet-Draft      Metadata Annotations in YANG-CBOR         March 2025
 
 
 
-Bormann                 Expires 4 September 2025                [Page 3]
+Bormann                  Expires 11 August 2026                 [Page 3]
 
-Internet-Draft      Metadata Annotations in YANG-CBOR         March 2025
+Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
 
    In essence, the annotated-data-node _stands in_ for the Instance-
@@ -221,9 +221,9 @@ Internet-Draft      Metadata Annotations in YANG-CBOR         March 2025
 
 
 
-Bormann                 Expires 4 September 2025                [Page 4]
+Bormann                  Expires 11 August 2026                 [Page 4]
 
-Internet-Draft      Metadata Annotations in YANG-CBOR         March 2025
+Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
 
               +=====================================+=======+
@@ -277,9 +277,9 @@ Internet-Draft      Metadata Annotations in YANG-CBOR         March 2025
 
 
 
-Bormann                 Expires 4 September 2025                [Page 5]
+Bormann                  Expires 11 August 2026                 [Page 5]
 
-Internet-Draft      Metadata Annotations in YANG-CBOR         March 2025
+Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
 
    {
@@ -333,9 +333,9 @@ Internet-Draft      Metadata Annotations in YANG-CBOR         March 2025
 
 
 
-Bormann                 Expires 4 September 2025                [Page 6]
+Bormann                  Expires 11 August 2026                 [Page 6]
 
-Internet-Draft      Metadata Annotations in YANG-CBOR         March 2025
+Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
 
 3.2.  Examples from Section 5.2.3 of [RFC7952]
@@ -389,9 +389,9 @@ Internet-Draft      Metadata Annotations in YANG-CBOR         March 2025
 
 
 
-Bormann                 Expires 4 September 2025                [Page 7]
+Bormann                  Expires 11 August 2026                 [Page 7]
 
-Internet-Draft      Metadata Annotations in YANG-CBOR         March 2025
+Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
 
 3.3.  Examples from Section 5.2.4 of [RFC7952]
@@ -445,9 +445,9 @@ Internet-Draft      Metadata Annotations in YANG-CBOR         March 2025
 
 
 
-Bormann                 Expires 4 September 2025                [Page 8]
+Bormann                  Expires 11 August 2026                 [Page 8]
 
-Internet-Draft      Metadata Annotations in YANG-CBOR         March 2025
+Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
 
               At the time of writing, this BCP comprises the following:
@@ -490,30 +490,35 @@ Internet-Draft      Metadata Annotations in YANG-CBOR         March 2025
               Language (CDDL) Grammar", RFC 9682, DOI 10.17487/RFC9682,
               November 2024, <https://www.rfc-editor.org/rfc/rfc9682>.
 
+   [RFC9741]  Bormann, C., "Concise Data Definition Language (CDDL):
+              Additional Control Operators for the Conversion and
+              Processing of Text", RFC 9741, DOI 10.17487/RFC9741, March
+              2025, <https://www.rfc-editor.org/rfc/rfc9741>.
+
    [STD94]    Internet Standard 94,
               <https://www.rfc-editor.org/info/std94>.
               At the time of writing, this STD comprises the following:
+
+
+
+Bormann                  Expires 11 August 2026                 [Page 9]
+
+Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
+
 
               Bormann, C. and P. Hoffman, "Concise Binary Object
               Representation (CBOR)", STD 94, RFC 8949,
               DOI 10.17487/RFC8949, December 2020,
               <https://www.rfc-editor.org/info/rfc8949>.
 
-
-
-Bormann                 Expires 4 September 2025                [Page 9]
-
-Internet-Draft      Metadata Annotations in YANG-CBOR         March 2025
-
-
 6.2.  Informative References
 
    [I-D.ietf-cbor-edn-literals]
               Bormann, C., "CBOR Extended Diagnostic Notation (EDN)",
               Work in Progress, Internet-Draft, draft-ietf-cbor-edn-
-              literals-16, 8 January 2025,
+              literals-19, 16 October 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-cbor-
-              edn-literals-16>.
+              edn-literals-19>.
 
 Acknowledgments
 
@@ -552,9 +557,4 @@ Author's Address
 
 
 
-
-
-
-
-
-Bormann                 Expires 4 September 2025               [Page 10]
+Bormann                  Expires 11 August 2026                [Page 10]
