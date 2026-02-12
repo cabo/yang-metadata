@@ -4,8 +4,9 @@
 
 CBOR                                                          C. Bormann
 Internet-Draft                                    Universität Bremen TZI
-Intended status: Standards Track                         7 February 2026
-Expires: 11 August 2026
+Updates: 9595 (if approved)                             12 February 2026
+Intended status: Standards Track                                        
+Expires: 16 August 2026
 
 
              Representing metadata annotations in YANG-CBOR
@@ -15,6 +16,10 @@ Abstract
 
    This specification defines the representation of metadata annotations
    (RFC 7952) in YANG-CBOR (RFC 9254).
+
+   It updates RFC 9595 to add a separate namespace enabling the
+   representation of SIDs for metadata annotations in the ".sid" files
+   defined there.
 
 About This Document
 
@@ -46,17 +51,14 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 August 2026.
 
 
-
-
-
-
-Bormann                  Expires 11 August 2026                 [Page 1]
+Bormann                  Expires 16 August 2026                 [Page 1]
 
 Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
+
+   This Internet-Draft will expire on 16 August 2026.
 
 Copyright Notice
 
@@ -75,18 +77,20 @@ Copyright Notice
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
-     1.1.  Conventions and Definitions . . . . . . . . . . . . . . .   2
+     1.1.  Conventions and Definitions . . . . . . . . . . . . . . .   3
    2.  Specification . . . . . . . . . . . . . . . . . . . . . . . .   3
    3.  Examples  . . . . . . . . . . . . . . . . . . . . . . . . . .   4
      3.1.  Examples from RFC7952 . . . . . . . . . . . . . . . . . .   5
      3.2.  Examples from RFC7952 . . . . . . . . . . . . . . . . . .   7
      3.3.  Examples from RFC7952 . . . . . . . . . . . . . . . . . .   8
-   4.  Security Considerations . . . . . . . . . . . . . . . . . . .   8
-   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
-     5.1.  CBOR Tags Registry  . . . . . . . . . . . . . . . . . . .   8
-   6.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   8
-     6.1.  Normative References  . . . . . . . . . . . . . . . . . .   8
-     6.2.  Informative References  . . . . . . . . . . . . . . . . .  10
+     3.4.  (Add more examples) . . . . . . . . . . . . . . . . . . .   8
+   4.  SIDs for Metadata Annotations . . . . . . . . . . . . . . . .   8
+   5.  Security Considerations . . . . . . . . . . . . . . . . . . .   8
+   6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
+     6.1.  CBOR Tags Registry  . . . . . . . . . . . . . . . . . . .   9
+   7.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   9
+     7.1.  Normative References  . . . . . . . . . . . . . . . . . .   9
+     7.2.  Informative References  . . . . . . . . . . . . . . . . .  10
    Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  10
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  10
 
@@ -94,6 +98,21 @@ Table of Contents
 
    This specification defines the representation of metadata annotations
    [RFC7952] in YANG-CBOR [RFC9254].
+
+   It updates [RFC9595] to add a separate namespace enabling the
+   representation of SIDs for metadata annotations in the ".sid" files
+   defined there.
+
+
+
+
+
+
+
+Bormann                  Expires 16 August 2026                 [Page 2]
+
+Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
+
 
 1.1.  Conventions and Definitions
 
@@ -106,13 +125,6 @@ Table of Contents
    The term "CDDL" refers to the data definition language defined in
    [RFC8610] and its registered extensions (such as those in [RFC9165]
    and [RFC9741]), as well as [RFC9682].
-
-
-
-Bormann                  Expires 11 August 2026                 [Page 2]
-
-Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
-
 
    Specific examples are notated in CBOR Extended Diagnostic Notation
    (EDN), as originally introduced in Section 8 of RFC 8949 [STD94] and
@@ -148,6 +160,16 @@ Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
    the metadata map, they MUST be fully qualified, analogous to
    Section 5.2.1 of [RFC7952].
 
+
+
+
+
+
+Bormann                  Expires 16 August 2026                 [Page 3]
+
+Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
+
+
    Metadata annotations are added to a data node instance by replacing
    the representation of the instance ("Instance-Representation") with
    the structure specified in CDDL in Figure 1:
@@ -158,17 +180,6 @@ Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
    ])
 
                    Figure 1: Metadata-Annotated Data Node
-
-
-
-
-
-
-
-Bormann                  Expires 11 August 2026                 [Page 3]
-
-Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
-
 
    In essence, the annotated-data-node _stands in_ for the Instance-
    Representation; a consuming implementation that wants to ignore all
@@ -210,18 +221,7 @@ Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-Bormann                  Expires 11 August 2026                 [Page 4]
+Bormann                  Expires 16 August 2026                 [Page 4]
 
 Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
@@ -249,6 +249,8 @@ Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
    For computing the outermost SID deltas, the examples assume the
    reference SID is 61000.
 
+   TODO: Add explanatory text; add more examples.
+
 3.1.  Examples from Section 5.2.2 of [RFC7952]
 
    The examples here show that the map representing the instance
@@ -275,9 +277,7 @@ Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
 
 
-
-
-Bormann                  Expires 11 August 2026                 [Page 5]
+Bormann                  Expires 16 August 2026                 [Page 5]
 
 Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
@@ -306,7 +306,7 @@ Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
       ])
    }
 
-                     Figure 3: Cask example with names
+          Figure 3: Cask example with a name-based item identifier
 
    "seq" is a list whose key is "name"; annotation "last-modified" is
    added only to the first entry:
@@ -333,7 +333,7 @@ Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
 
 
-Bormann                  Expires 11 August 2026                 [Page 6]
+Bormann                  Expires 16 August 2026                 [Page 6]
 
 Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
@@ -389,7 +389,7 @@ Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
 
 
-Bormann                  Expires 11 August 2026                 [Page 7]
+Bormann                  Expires 16 August 2026                 [Page 7]
 
 Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
@@ -417,13 +417,40 @@ Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
                      Figure 7: Bibliomod:folio example
 
-4.  Security Considerations
+3.4.  (Add more examples)
+
+4.  SIDs for Metadata Annotations
+
+   The SID file format defined in [RFC9595] is extended by adding
+   another alternative in the enumeration used in the leaf namespace:
+
+   leaf namespace {
+     type enumeration {
+       [...]
+       enum annotation {
+         value 4;
+         description
+           "The namespace for all names of metadata attributes, as
+            defined in YANG-metadata [RFC7952].";
+       }
+     }
+   }
+
+5.  Security Considerations
 
    The security considerations of [RFC7952] and [RFC9254] apply.
 
-5.  IANA Considerations
+6.  IANA Considerations
 
-5.1.  CBOR Tags Registry
+
+
+
+Bormann                  Expires 16 August 2026                 [Page 8]
+
+Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
+
+
+6.1.  CBOR Tags Registry
 
    In the registry "CBOR Tags" [IANA.cbor-tags], IANA is requested to
    allocate one tag:
@@ -436,20 +463,12 @@ Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
 
    *  Reference: This document
 
-6.  References
+7.  References
 
-6.1.  Normative References
+7.1.  Normative References
 
    [BCP14]    Best Current Practice 14,
               <https://www.rfc-editor.org/info/bcp14>.
-
-
-
-Bormann                  Expires 11 August 2026                 [Page 8]
-
-Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
-
-
               At the time of writing, this BCP comprises the following:
 
               Bradner, S., "Key words for use in RFCs to Indicate
@@ -480,11 +499,23 @@ Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
               DOI 10.17487/RFC9165, December 2021,
               <https://www.rfc-editor.org/rfc/rfc9165>.
 
+
+
+Bormann                  Expires 16 August 2026                 [Page 9]
+
+Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
+
+
    [RFC9254]  Veillette, M., Ed., Petrov, I., Ed., Pelov, A., Bormann,
               C., and M. Richardson, "Encoding of Data Modeled with YANG
               in the Concise Binary Object Representation (CBOR)",
               RFC 9254, DOI 10.17487/RFC9254, July 2022,
               <https://www.rfc-editor.org/rfc/rfc9254>.
+
+   [RFC9595]  Veillette, M., Ed., Pelov, A., Ed., Petrov, I., Ed.,
+              Bormann, C., and M. Richardson, "YANG Schema Item
+              iDentifier (YANG SID)", RFC 9595, DOI 10.17487/RFC9595,
+              July 2024, <https://www.rfc-editor.org/rfc/rfc9595>.
 
    [RFC9682]  Bormann, C., "Updates to the Concise Data Definition
               Language (CDDL) Grammar", RFC 9682, DOI 10.17487/RFC9682,
@@ -499,19 +530,12 @@ Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
               <https://www.rfc-editor.org/info/std94>.
               At the time of writing, this STD comprises the following:
 
-
-
-Bormann                  Expires 11 August 2026                 [Page 9]
-
-Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
-
-
               Bormann, C. and P. Hoffman, "Concise Binary Object
               Representation (CBOR)", STD 94, RFC 8949,
               DOI 10.17487/RFC8949, December 2020,
               <https://www.rfc-editor.org/info/rfc8949>.
 
-6.2.  Informative References
+7.2.  Informative References
 
    [I-D.ietf-cbor-edn-literals]
               Bormann, C., "CBOR Extended Diagnostic Notation (EDN)",
@@ -525,6 +549,18 @@ Acknowledgments
    Andy Bierman brought up the need for this document.
 
 Author's Address
+
+
+
+
+
+
+
+
+Bormann                  Expires 16 August 2026                [Page 10]
+
+Internet-Draft      Metadata Annotations in YANG-CBOR      February 2026
+
 
    Carsten Bormann
    Universität Bremen TZI
@@ -557,4 +593,24 @@ Author's Address
 
 
 
-Bormann                  Expires 11 August 2026                [Page 10]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bormann                  Expires 16 August 2026                [Page 11]
