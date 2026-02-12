@@ -6,6 +6,7 @@ abbrev: Metadata Annotations in YANG-CBOR
 category: std
 consensus: true
 stream: IETF
+updates: 9595
 
 docname: draft-bormann-cbor-yang-metadata-latest
 number:
@@ -33,6 +34,7 @@ author:
 normative:
   RFC7952: md
   RFC9254: yang-cbor
+  RFC9595: yang-sid
   STD94: cbor
   IANA.cbor-tags: tags
   RFC8610: cddl
@@ -48,6 +50,10 @@ informative:
 This specification defines the representation of metadata annotations
 (RFC 7952) in YANG-CBOR (RFC 9254).
 
+It updates RFC 9595 to add a separate namespace enabling the
+representation of SIDs for metadata annotations in the ".sid" files
+defined there.
+
 --- middle
 
 # Introduction
@@ -55,6 +61,9 @@ This specification defines the representation of metadata annotations
 This specification defines the representation of metadata annotations
 {{RFC7952}} in YANG-CBOR {{RFC9254}}.
 
+It updates {{RFC9595}} to add a separate namespace enabling the
+representation of SIDs for metadata annotations in the ".sid" files
+defined there.
 
 ## Conventions and Definitions
 
@@ -161,6 +170,8 @@ start of each subsection:
 For computing the outermost SID deltas, the examples assume the
 reference SID is 61000.
 
+TODO: Add explanatory text; add more examples.
+
 ## Examples from {{Section 5.2.2 of -md}} {#s522}
 
 The examples here show that the map representing the instance
@@ -203,7 +214,7 @@ The same "cask" example with name-based CBOR maps ({{Section 3.3 of RFC9254}}):
    ])
 }
 ~~~
-{: #fig-cask-name title="Cask example with names"}
+{: #fig-cask-name title="Cask example with a name-based item identifier"}
 
 "seq" is a list whose key is "name"; annotation "last-modified" is
 added only to the first entry:
@@ -287,11 +298,30 @@ namespace name "foo" in its CBOR encoding:
 ~~~
 {: #fig-folio title="Bibliomod:folio example"}
 
+## (Add more examples)
+
+# SIDs for Metadata Annotations {#sec-sids}
+
+The SID file format defined in {{-yang-sid}} is extended by adding
+another alternative in the enumeration used in the leaf `namespace`:
+
+~~~
+leaf namespace {
+  type enumeration {
+    [...]
+    enum annotation {
+      value 4;
+      description
+        "The namespace for all names of metadata attributes, as
+         defined in YANG-metadata [RFC7952].";
+    }
+  }
+}
+~~~
 
 # Security Considerations
 
 The security considerations of {{RFC7952}} and {{RFC9254}} apply.
-
 
 
 
@@ -314,4 +344,7 @@ In the registry "CBOR Tags" {{-tags}}, IANA is requested to allocate one tag:
 {:unnumbered}
 
 Andy Bierman brought up the need for this document.
+
+
+
 
