@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-19T03:37:50.995840+00:00",
+  "timestamp": "2026-07-21T03:31:43.415166+00:00",
   "repo": "core-wg/draft-ietf-core-yang-metadata",
   "labels": [
     {
@@ -49,7 +49,40 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 2,
+      "id": "I_kwDOLt8NaM8AAAABJg-sgQ",
+      "title": "Example SID File",
+      "url": "https://github.com/core-wg/draft-ietf-core-yang-metadata/issues/2",
+      "state": "OPEN",
+      "author": "vvilimek",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2026-07-20T22:18:14Z",
+      "updatedAt": "2026-07-20T22:18:14Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 3,
+      "id": "I_kwDOLt8NaM8AAAABJhAGwg",
+      "title": "Update RFC 9595",
+      "url": "https://github.com/core-wg/draft-ietf-core-yang-metadata/issues/3",
+      "state": "OPEN",
+      "author": "vvilimek",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "In section 4.  SIDs for Metadata Annotations specify the format of the `identifier` key of the `item` list. Simple YANG identifier stored in same fashion as the `module`, or `feature` will suffice.",
+      "createdAt": "2026-07-20T22:22:53Z",
+      "updatedAt": "2026-07-20T22:22:53Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
   "pulls": [
     {
       "number": 1,
