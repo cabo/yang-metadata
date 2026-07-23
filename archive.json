@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2026-07-21T03:31:43.415166+00:00",
+  "timestamp": "2026-07-23T03:35:19.041306+00:00",
   "repo": "core-wg/draft-ietf-core-yang-metadata",
   "labels": [
     {
@@ -60,16 +60,16 @@
       "authorAssociation": "NONE",
       "assignees": [],
       "labels": [],
-      "body": "",
+      "body": "A more simple example should be consider most likely. But I contributed to I-D opsawg-yang-provenance\n\n## SID File\n[ietf-yang-annotation@2026-06-10.sid](https://github.com/vvilimek/yang-provenance/blob/main/yangs/sid/ietf-yang-provenance-annotation%402026-06-30.sid)\n\n## YANG module\n[ietf-yang-annotation@2026-06-30.yang](https://github.com/vvilimek/yang-provenance/blob/main/yangs/ietf-yang-provenance-annotation%402026-06-30.yang)\n\n## depentent YANG modules\n[other YANG modules of I-D opsawg-yang-provenance](https://github.com/vvilimek/yang-provenance/tree/main/yangs)\n[purely dependent YANG modules from other sources (documents / drafts)](https://github.com/vvilimek/yang-provenance/tree/main/yangs/dependencies)",
       "createdAt": "2026-07-20T22:18:14Z",
-      "updatedAt": "2026-07-20T22:18:14Z",
+      "updatedAt": "2026-07-21T07:28:56Z",
       "closedAt": null,
       "comments": []
     },
     {
       "number": 3,
       "id": "I_kwDOLt8NaM8AAAABJhAGwg",
-      "title": "Update RFC 9595",
+      "title": "RFC 9595 Update: More actions needed",
       "url": "https://github.com/core-wg/draft-ietf-core-yang-metadata/issues/3",
       "state": "OPEN",
       "author": "vvilimek",
@@ -78,9 +78,17 @@
       "labels": [],
       "body": "In section 4.  SIDs for Metadata Annotations specify the format of the `identifier` key of the `item` list. Simple YANG identifier stored in same fashion as the `module`, or `feature` will suffice.",
       "createdAt": "2026-07-20T22:22:53Z",
-      "updatedAt": "2026-07-20T22:22:53Z",
+      "updatedAt": "2026-07-21T07:29:43Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "vvilimek",
+          "authorAssociation": "NONE",
+          "body": "https://github.com/core-wg/draft-ietf-core-yang-metadata/issues/2",
+          "createdAt": "2026-07-21T07:29:43Z",
+          "updatedAt": "2026-07-21T07:29:43Z"
+        }
+      ]
     }
   ],
   "pulls": [
